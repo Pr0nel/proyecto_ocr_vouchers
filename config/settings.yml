@@ -1,0 +1,31 @@
+# config/settings.yaml
+
+segmentation:
+  model_name: "vit_b"
+  checkpoint: "checkpoints/sam-vit-b/sam_vit_b_01ec64.pth"
+  # Puedes cambiar a "vit_l" o "vit_h" y su checkpoint correspondiente
+
+validation:
+  #model_name: "vit-base-patch32"
+  #checkpoint: "checkpoints/clip-vit-base-patch32"
+  model_name: "vit-large-patch14"
+  checkpoint: "checkpoints/clip-vit-large-patch14"
+  confidence_threshold: 0.8 # Umbral para aceptar una predicción como "voucher"
+  labels:
+    - "voucher"
+    - "no voucher"
+
+ocr:
+  method: "tesseract" # opciones: "tesseract" o "textract" o "donut"
+  donut_model: "checkpoint/donut-base-finetuned-cord-v2"
+
+paths:
+  vouchers_a_segmentar: "data/vouchers_a_segmentar"
+  single_voucher: "data/single_voucher"
+  validated_voucher_dir: "data/validated_voucher"
+  output_no_voucher_dir: "data/no_voucher"
+  outputs_json_dir: "outputs"
+
+logging:
+  log_file: "outputs/logs/pipeline.log"
+  log_level: "INFO"
