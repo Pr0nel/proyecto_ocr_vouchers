@@ -57,7 +57,7 @@ Este proyecto es una aplicación Python diseñada para procesar imágenes de vou
     ```bash
     python -m venv venv
     source venv/bin/activate  # En Windows: venv\Scripts\activate
-    pip install -r requirements.txt # (Sería ideal tener un requirements.txt)
+    pip install -r requirements.txt
     ```
 
     _Nota: La instalación de `torch` puede variar según tu sistema y si tienes GPU. Consulta la [página oficial de PyTorch](https://pytorch.org/)._
