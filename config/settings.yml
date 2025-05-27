@@ -6,10 +6,10 @@ segmentation:
   # Puedes cambiar a "vit_l" o "vit_h" y su checkpoint correspondiente
 
 validation:
-  #model_name: "vit-base-patch32"
-  #checkpoint: "checkpoints/clip-vit-base-patch32"
-  model_name: "vit-large-patch14"
-  checkpoint: "checkpoints/clip-vit-large-patch14"
+  model_name: "vit-base-patch32"
+  checkpoint: "checkpoints/clip-vit-base-patch32"
+  #model_name: "vit-large-patch14"
+  #checkpoint: "checkpoints/clip-vit-large-patch14"
   confidence_threshold: 0.8 # Umbral para aceptar una predicción como "voucher"
   labels:
     - "voucher"
@@ -23,7 +23,7 @@ paths:
   vouchers_a_segmentar: "data/vouchers_a_segmentar"
   single_voucher: "data/single_voucher"
   validated_voucher_dir: "data/validated_voucher"
-  output_no_voucher_dir: "data/no_voucher"
+  output_no_voucher_dir: "outputs/no_voucher"
   outputs_json_dir: "outputs"
 
 logging:
