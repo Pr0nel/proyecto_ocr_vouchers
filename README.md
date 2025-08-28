@@ -115,13 +115,13 @@ logging:
   - **Limpieza de Texto OCR**:
     - El módulo `scr/utils/text_processing.py` contiene funciones puras (ej. `remover_espacios_extra`, `convertir_a_minusculas`) para procesar el texto extraído por el OCR.
     - `VoucherPipeline` utiliza estas funciones, y el JSON de salida ahora incluye tanto el texto original (`raw_text`) como el texto procesado (`cleaned_text`).
-      > [!TIP]
-      > Este enfoque hace que la lógica de limpieza de texto sea independiente, fácil de probar y modificar sin afectar otras partes del pipeline.
+> [!TIP]
+> Este enfoque hace que la lógica de limpieza de texto sea independiente, fácil de probar y modificar sin afectar otras partes del pipeline.
   - **Procesamiento de Segmentos en `SamSegmenter`**:
     - La lógica para validar y procesar cada máscara de segmentación individual se ha extraído a una función auxiliar (`_procesar_mascara_individual`) dentro de `voucher_segmentation.py`.
     - Esta función opera de manera más funcional, tomando los datos de la máscara y devolviendo un resultado (el segmento procesado o `None`) sin depender del estado de la instancia `SamSegmenter` para la decisión de filtrado.
-      > [!NOTE]
-      > Esto simplifica el método principal `SamSegmenter.segment` y facilita las pruebas de la lógica de filtrado de máscaras.
+> [!NOTE]
+> Esto simplifica el método principal `SamSegmenter.segment` y facilita las pruebas de la lógica de filtrado de máscaras.
   - **Métodos Estáticos para Lógica Pura**:
     - `OCRExtractor.preprocesar_imagen`: Se convirtió en un método estático, ya que su lógica de transformación de imagen no depende del estado de la instancia.
     - `ClipValidator._evaluar_probabilidades`: La sub-lógica para evaluar las probabilidades del modelo contra un umbral se extrajo a un método estático, aislando la decisión pura.
