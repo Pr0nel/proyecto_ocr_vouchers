@@ -4,5 +4,4 @@ venv/
 .vscode/
 outputs/
 checkpoints/
-models/
 data/
