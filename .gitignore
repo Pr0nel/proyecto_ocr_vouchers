@@ -5,4 +5,4 @@ venv/
 outputs/
 checkpoints/
 models/
-
+data/
